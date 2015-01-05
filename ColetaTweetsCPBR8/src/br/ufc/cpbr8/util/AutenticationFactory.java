@@ -6,10 +6,10 @@ import twitter4j.conf.ConfigurationBuilder;
 
 public class AutenticationFactory {
 
-	private static final String CONSUMERKEY = "NeA3aSlFvNiAOfBpR2iygvkT5";
-	private static final String CONSUMERSECRET = "Z8gVO20T08kWAjJ30jV9YPaSzewe7Wczo3kD0dRCyV4KQRs0tT";
-	private static final String ACCESSTOKEN = "275657169-6dHPXNfQXLPK1ZuoVtbxLMSDiRvJSuuY1Avd5lOS";
-	private static final String ACCESSTOKENSECRET = "pwQ0QdXdCldbfvDwdKrmSmp1t2FPfY7j9f3RKpePhuc6Z";
+	private static final String CONSUMERKEY = "e6bDAG2da94gdEdvhJzmOWhiM";
+	private static final String CONSUMERSECRET = "8Qa64vNJ7OJUAh1zYIGp8rZSloGkt4SZDSuBOrUwOjgOoi92zO";
+	private static final String ACCESSTOKEN = "275657169-NVxtKJIIQCeIU1g3DczpZ3gbUvahJ748r6Jnqto7";
+	private static final String ACCESSTOKENSECRET = "grfzEeIZ5vBp4cNohyRjawnn1Gd6eqNplhLVpVV5tVXGA";
 
 	public static Twitter getTwitter(){
 		ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -18,7 +18,9 @@ public class AutenticationFactory {
 		.setOAuthConsumerSecret(CONSUMERSECRET)
 		.setOAuthAccessToken(ACCESSTOKEN)
 		.setOAuthAccessTokenSecret(ACCESSTOKENSECRET);
+		
 		TwitterFactory twitterFactory = new TwitterFactory(cb.build());
+		
 		Twitter twitter = twitterFactory.getInstance();
 		return twitter;
 	}

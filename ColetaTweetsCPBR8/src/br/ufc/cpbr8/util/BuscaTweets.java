@@ -50,7 +50,6 @@ public class BuscaTweets implements Runnable{
 				for (Status status : listaStatus) 
 					csv.addlinha(status, busca.getDataCriacao(), cont);
 				
-				
 				Thread.currentThread().sleep(busca.getTempoBusca());
 				
 			} catch (Exception e) {
