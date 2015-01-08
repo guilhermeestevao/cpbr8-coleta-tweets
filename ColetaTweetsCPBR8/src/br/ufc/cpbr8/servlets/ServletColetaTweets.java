@@ -97,7 +97,7 @@ public class ServletColetaTweets extends HttpServlet {
 		busca.setQuantidade(quantidade);
 		busca.setNumBuscas(repeticoes);
 		
-		File raiz = new File("/home/guilherme/coleta");
+		File raiz = new File("/coleta");
 		File pasta = new File(raiz, dataString);
 	
 		if(!pasta.exists())
@@ -106,7 +106,7 @@ public class ServletColetaTweets extends HttpServlet {
 		
 		//dataString é po nome da pasta onde ficarão os csvs dessa busca
 		
-		BufferedWriter bw = new BufferedWriter(new FileWriter("/home/guilherme/coleta/"+dataString+"/info.txt", true));
+		BufferedWriter bw = new BufferedWriter(new FileWriter("/coleta/"+dataString+"/info.txt", true));
 		bw.write("Descrição :"+busca.getDescricao());
 		bw.write("\n");
 		

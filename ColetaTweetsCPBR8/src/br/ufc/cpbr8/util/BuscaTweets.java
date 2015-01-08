@@ -62,5 +62,4 @@ public class BuscaTweets implements Runnable{
 		
 	}
 
-
 }
