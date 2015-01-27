@@ -37,7 +37,6 @@ public class CodificacaoDados implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
 		req.setCharacterEncoding("UTF-8");
-		System.out.println("codificação alterada");
 		chain.doFilter(request, response);
 	}
 
