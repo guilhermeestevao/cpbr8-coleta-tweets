@@ -4,6 +4,11 @@ import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,7 +28,7 @@ public class CSVUtil {
 		
 		try{
 			
-			bw = new BufferedWriter(new FileWriter("/coleta/"+dataString+"/"+contBusca+".csv", true));
+			bw = new BufferedWriter(new FileWriter("C:\\Users\\Alex Oliveira\\Desktop\\"+contBusca+".csv", true));
 			
 			bw.write("id;status;data;usuarioId;nome;username;localizacao;mencionados;hashtags\n"); 
 			bw.close();
@@ -40,7 +45,13 @@ public class CSVUtil {
 		String dataString = format.format(data);
 		String linha = toString(status);
 		try {
-			bw = new BufferedWriter(new FileWriter("/coleta/"+dataString+"/"+cout+".csv", true));
+
+			Path path = Paths.get("C:\\Users\\Alex Oliveira\\Desktop\\"+cout+".csv");
+			//bw = new BufferedWriter(new FileWriter("C:\\Users\\Alex Oliveira\\Desktop\\"+cout+".csv", true));
+			
+			bw = Files.newBufferedWriter(path, StandardCharsets.UTF_8, StandardOpenOption.APPEND);
+			
+			System.out.println(linha);
 			bw.write(linha);
 			bw.append("\n");
 			bw.close();

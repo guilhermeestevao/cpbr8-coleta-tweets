@@ -3,30 +3,60 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<meta charset="utf-8">
+<title>AnaliseCPBR8</title>
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
-<a href="index.jsp"> Index </a>
 	<div>
-		<h2>Buscando Tweets!</h2>
+		
+		<div class="navbar">
+		  <h2 class="textnavbar">Análise Tweets CPBR8</h2>
+		</div>
+		<div class="navbarsec">
+			<a href="index.jsp"> 
+				<input type="button" value="Voltar para a página inicial" class="btnmenu"/> 
+			</a>
+		</div>
 		<form action="ServletColetaTweets" method="post">
-			<label for="descricao"> Descrição da busca:</label> <br>
-			<textarea rows="5" cols="50" name="descricao"></textarea><br>
-			<label for="busca"> Buscar por:</label> <br>
-			<textarea rows="8" cols="50" name="busca"></textarea><br>
-			<label for="tempo_periodo"> Periodo de tempo para buscas: </label>
-			<select name="tempo_periodo" id="tempo_periodo"> 
-				<option value="minuto"> Minuto </option>
-				<option value="dia"> Dia </option>
-				<option value="hora"> Hora </option>
-			</select>
-			<input type="text" name="tempo_hora" size="8px"/> <br>
-			<label for="quantidade"> Quantidade de tweets por busca: </label>
-			<input type="text" name="quantidade"/> <br>
-			<label for="num_buscas"> Reqpetições da busca: </label>
-			<input type="text" name="num_buscas" id="num_buscas"/> <br>
-			<input type="submit" value="Procurar" />
+			<div class="labels">
+                <label for="descricao" class="labels"> Descrição da busca:</label>
+            </div>
+			<div class="component">
+                <textarea rows="7" cols="50" name="descricao"></textarea>
+            </div>
+            <div class="labels">
+                <label for="busca" class="labels"> Buscar por:</label>
+            </div>
+            <div class="component">
+                <textarea rows="6" cols="50" name="busca"></textarea>
+            </div>
+            <div class="labels">
+                <label for="tempo_periodo" class="labels"> Periodo de tempo para buscas: </label>
+            </div>
+            <div class="component">
+                <select name="tempo_periodo" id="tempo_periodo"> 
+				    <option value="minuto"> Minuto </option>
+				    <option value="dia"> Dia </option>
+				    <option value="hora"> Hora </option>
+                </select>
+			<input type="text" name="tempo_hora" size="8px"/>
+            </div>
+            <div class="labels">
+                <label for="quantidade" class="labels"> Quantidade de tweets por busca: </label>
+            </div>
+            <div class="component">
+                <input type="text" name="quantidade"/> <br>
+            </div>
+            <div class="labels">
+                <label for="num_buscas" class="labels"> Requisições da busca: </label>
+            </div>
+            <div class="component">
+                <input type="text" name="num_buscas" id="num_buscas"/>
+            </div>
+            <div class="component">
+                <input type="submit" value="Procurar" class="btn"/>
+            </div>
 		</form>
 	</div>
 </body>

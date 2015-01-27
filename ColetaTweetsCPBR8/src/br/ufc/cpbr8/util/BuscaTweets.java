@@ -37,21 +37,19 @@ public class BuscaTweets implements Runnable{
 		while(cont <= busca.getNumBuscas() ){
 			Query query = new Query(busca.getValorBusca());
 			query.setCount(busca.getQuantidade());
-		
+			query.setLang("pt");
 			QueryResult resultadoBusca = null;
 			
 			try {
 				resultadoBusca = twitter.search(query);
 				List<Status> listaStatus = resultadoBusca.getTweets();
-				
+				System.out.println("Tamanho da lista: "+listaStatus.size());
 				CSVUtil csv = new CSVUtil();
 				csv.crirarArquivo(busca.getDataCriacao(), cont);
 				
 				for (Status status : listaStatus) 
 					csv.addlinha(status, busca.getDataCriacao(), cont);
-				
 				Thread.currentThread().sleep(busca.getTempoBusca());
-				
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 				e.printStackTrace();
