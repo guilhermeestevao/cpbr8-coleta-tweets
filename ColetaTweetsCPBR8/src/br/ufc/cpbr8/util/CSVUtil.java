@@ -28,7 +28,7 @@ public class CSVUtil {
 		
 		try{
 			
-			bw = new BufferedWriter(new FileWriter("C:\\Users\\Alex Oliveira\\Desktop\\"+contBusca+".csv", true));
+			bw = new BufferedWriter(new FileWriter("/coleta/"+dataString+"/"+contBusca+".csv", true));
 			
 			bw.write("id;status;data;usuarioId;nome;username;localizacao;mencionados;hashtags\n"); 
 			bw.close();
@@ -46,7 +46,7 @@ public class CSVUtil {
 		String linha = toString(status);
 		try {
 
-			Path path = Paths.get("C:\\Users\\Alex Oliveira\\Desktop\\"+cout+".csv");
+			Path path = Paths.get("/coleta/"+dataString+"/"+cout+".csv");
 			//bw = new BufferedWriter(new FileWriter("C:\\Users\\Alex Oliveira\\Desktop\\"+cout+".csv", true));
 			
 			bw = Files.newBufferedWriter(path, StandardCharsets.UTF_8, StandardOpenOption.APPEND);
@@ -64,7 +64,8 @@ public class CSVUtil {
 	private String toString(Status tweet){
 		String id =  "\"" +String.valueOf(tweet.getId())+"\"";
 		String status = tweet.getText();
-		status.replaceAll("[\"\\n]","");
+		status = status.replaceAll("[\"\\n]","");
+		//status.replaceAll("\n","");
 		status = "\""+status+"\"";
 		DateFormat formato = new SimpleDateFormat("dd/MM/yy hh:mm");
 		String data = "\""+formato.format(tweet.getCreatedAt())+"\"";
